@@ -19,3 +19,10 @@ Thumbs.db
 
 # Temporary files
 *.log
+
+# Jupyter temporary files
+.ipynb_checkpoints/
+.virtual_documents/
+
+# Anaconda generated directories
+/anaconda_projects/
