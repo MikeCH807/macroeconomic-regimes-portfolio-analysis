@@ -1,0 +1,21 @@
+
+# Python virtual environment
+.venv/
+venv/
+
+# PyCharm settings
+.idea/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Testing cache
+.pytest_cache/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log
