@@ -26,3 +26,23 @@ Thumbs.db
 
 # Anaconda generated directories
 /anaconda_projects/
+
+
+# Environment variables and API credentials
+.env
+.env.*
+!.env.example
+
+# Additional Python environments
+env/
+
+# Additional Python cache
+*.pyo
+.mypy_cache/
+.ruff_cache/
+
+# VS Code settings
+.vscode/
+
+# Temporary files
+*.tmp
