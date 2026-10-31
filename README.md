@@ -12,7 +12,7 @@ This research project investigates how relationships among equities, intermediat
 
 - **Stock–bond relationships changed across inflation regimes.** Monthly SPY–IEF Pearson correlation was **−0.262** in low-inflation months (96 observations) and **+0.421** in high-inflation months (33 observations).
 - **Statistical evidence was sensitive to 2022.** A full-sample interaction regression estimated the high-inflation slope difference at **+0.297** (HAC(12) *p* = **0.0044**), but the estimate became **+0.168** (*p* = **0.1133**) when 2022 was excluded.
-- **Gold improved full-sample risk-adjusted portfolio performance.** A monthly-rebalanced 60% SPY / 20% IEF / 20% GLD portfolio achieved a historical Sharpe ratio of **0.803**, compared with **0.720** for 60% SPY / 40% IEF.
+- **Gold improved historical portfolio performance, but statistical superiority was not established.** The monthly-rebalanced 60% SPY / 20% IEF / 20% GLD portfolio achieved a Sharpe ratio of **0.803**, compared with **0.720** for the traditional 60/40 portfolio. However, paired circular moving-block bootstrap confidence intervals for the Sharpe difference of +0.0828 included zero (six-month blocks: **[-0.0660, 0.2221]**; 12-month blocks: **[-0.0782, 0.2301]**). Excluding 2025 reduced the Sharpe advantage from +0.083 to +0.041, while the 2008–2019 comparison favored the traditional 60/40 portfolio.
 - **The benefit was not stable across time.** The traditional 60/40 allocation had a higher Sharpe ratio in **2008–2013** and **2014–2019**; gold-inclusive portfolios performed better in **2020–2025**.
 
 ## Data and definitions
@@ -143,7 +143,39 @@ The structure above includes the **final proposed presentation and findings file
 
 Some early collection notebooks fetch FRED or Yahoo Finance data and therefore require internet access. Remote values and vendor-adjusted histories may be revised. This README documents the **reported research snapshot**, not a guarantee that every fresh data download will reproduce the same exact values.
 
-**Reproducibility review before public sharing:** validate that the local notebook runs all cells from a fresh kernel, that the chosen Python environment matches the imports across notebooks, and that no hidden credentials or restricted-use datasets have been committed.
+
+### Historical data reproducibility
+
+The project uses fixed historical datasets to support
+reproducible empirical results.
+
+- **Notebook 04:** Uses `DATA_MODE = "snapshot"` by
+  default, loading the saved daily ETF price dataset.
+  Setting `DATA_MODE = "live"` enables optional Yahoo
+  Finance downloads. Live refreshes are saved separately
+  to avoid overwriting the original research data.
+
+- **Notebook 05:** Uses a frozen GS3M Treasury yield
+  snapshot stored in
+  `data/source_snapshots/GS3M_2007_2025_snapshot.csv`,
+  avoiding the need for a live FRED request.
+
+- **Data integrity:** Daily prices, monthly prices, and
+  monthly returns have been independently compared
+  against the original saved datasets using numerical
+  consistency checks.
+
+- **Execution:** The updated Notebooks 01, 04, and 05
+  have been executed successfully from a fresh kernel
+  in the local research environment.
+
+Historical results are based on the saved research
+snapshot. Live market-data downloads may produce
+different values due to provider revisions.
+
+The optional live-download workflow has not been
+fully validated as part of this reproducibility audit.
+
 
 ## Limitations and research integrity
 
