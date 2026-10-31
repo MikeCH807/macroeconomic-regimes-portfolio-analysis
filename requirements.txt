@@ -1,0 +1,12 @@
+# Curated research dependencies; adjust to match imports in all notebooks.
+numpy
+pandas
+matplotlib
+seaborn
+scipy
+statsmodels
+yfinance
+jupyterlab
+ipykernel
+nbconvert
+requests
